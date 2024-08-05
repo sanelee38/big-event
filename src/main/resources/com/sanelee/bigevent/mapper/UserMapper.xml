@@ -18,7 +18,7 @@
         select * from user where username=#{username}
     </select>
 
-    <!--新增所有列-->
+    <!--新增用户-->
     <insert id="add" >
         insert into user(username, password, create_time, update_time) values (#{username},#{md5String},now(),now())
     </insert>

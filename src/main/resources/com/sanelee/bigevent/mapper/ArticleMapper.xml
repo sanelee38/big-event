@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sanelee.bigevent.mapper.ArticleMapper">
+
+
+    <insert id="add" parameterType="com.sanelee.bigevent.pojo.Article">
+        insert into article( title, content, cover_img, state, category_id, create_user, create_time, update_time)
+        values(#{title},#{content},#{coverImg},#{state},#{categoryId},#{createUser},#{createTime},#{updateTime});
+    </insert>
+
     <delete id="delete" parameterType="java.lang.Integer">
         delete from article where id = #{id}
     </delete>
